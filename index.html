@@ -8,47 +8,55 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 50px;
+            margin: 0;
+            padding: 0;
             background-color: #2bc47c8e;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         h1 {
             color: #333;
-            font-size: 36px;
-            margin-bottom: 30px;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
         .button-container {
+            width: 100%;
             display: flex;
             justify-content: center;
         }
 
         .button {
-            width: 100px;
-            height: 100px;
+            width: 40vw;
+            height: auto;
+            background: none;
             border: none;
             cursor: pointer;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 50%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            background-image: url('https://img.freepik.com/free-photo/3d-heart-white-background-render_113167-21.jpg?size=626&ext=jpg'); /* Default background */
+            transition: transform 0.3s ease;
         }
 
-        .button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 0, 0.7);
+        .button img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 50%;
+        }
+
+        .button:active {
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <h1>SVG Styled Button</h1>
+    <h1>Touch me if you're horny...</h1>
     <div class="button-container">
-        <button class="button" onclick="pickRandomVideo(urls)">Click Me</button>
-
-
+        <button class="button" onclick="pickRandomVideo()">
+            <img src="https://img.freepik.com/free-photo/3d-heart-white-background-render_113167-21.jpg?size=626&ext=jpg" alt="Clickable Button">
+        </button>
     </div>
 
     <script>
@@ -113,18 +121,16 @@
     "https://www.pornhub.com/view_video.php?viewkey=640f5153105c0",
     "https://www.pornhub.com/view_video.php?viewkey=678e72085431c",
     "https://www.xvideos.com/video.othhemk114a/i_told_you_to_stop_but_you_couldn_t_take_it_look_at_the_end_",
-  ];
+        ]; // Replace with your list of URLs
 
-        function pickRandomVideo(urls) {
-            const randomIndex = Math.floor(Math.random() * urls.length);
-            const randomURL = urls[randomIndex];
-            if (randomURL) {
-                window.open(randomURL, '_blank');
+        function pickRandomVideo() {
+            if (urls.length > 0) {
+                const randomIndex = Math.floor(Math.random() * urls.length);
+                window.location.href = urls[randomIndex];
             } else {
-                alert('No valid URL found.');
+                alert("No URLs available.");
             }
         }
     </script>
 </body>
 </html>
-
