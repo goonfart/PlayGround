@@ -1,70 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random URL Button</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #2bc47c8e;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random URL Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #2bc47c8e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
 
-        .button-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
+    nav a {
+      color: aqua;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .button {
-            width: 40vw;
-            height: auto;
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    h1 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+      margin-top: 60px; /* room for nav */
+    }
 
-        .button img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 50%;
-        }
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .button:active {
-            transform: scale(1.1);
-        }
-    </style>
+    .button {
+      width: 40vw;
+      height: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .button img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .button:active {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-    <h1>Touch me if you're happy</h1>
-    <div class="button-container">
-        <button class="button" onclick="pickRandomVideo()">
-            <img src="https://i.imgur.com/hzIvrVs.png" alt="Clickable Button">
-        </button>
-    </div>
+  <nav>
+    <a href="/">🎲 Random</a>
+    <a href="/player.html">🎥 Embed Player + Arthur</a>
+  </nav>
 
-    <script>
-        // List of URLs
-        const urls = [
-    "https://www.playvids.com/es/YYoSeRcaatw/anna-claire-clouds-fucking-her-ex-in-front-of-me-milf-nude",
+  <h1>Touch me if you're happy</h1>
+  <div class="button-container">
+    <button class="button" onclick="pickRandomVideo()">
+      <img src="https://i.imgur.com/hzIvrVs.png" alt="Clickable Button">
+    </button>
+  </div>
+
+  <script>
+    const urls = [
+"https://www.playvids.com/es/YYoSeRcaatw/anna-claire-clouds-fucking-her-ex-in-front-of-me-milf-nude",
     "https://www.bellesa.co/videos/9128/satin-dresses",
     "https://www.bellesa.co/videos/6575/tender-love",
     "https://m.hellporno.com/videos/married-khloe-kapri-steps-out-of-her-marriage-for-big-black-dick-action/",
@@ -216,17 +237,17 @@
     "https://www.pornhub.com/view_video.php?viewkey=ph60494715bf1c4",
     "https://www.pornhub.com/view_video.php?viewkey=ph5fdcc53426a29",
     "https://www.pornhub.com/view_video.php?viewkey=ph5dab7503c65c5",
-        ]; // Replace with your actual URLs
+        
+    ]; // Replace with real URLs
 
-        // Function to pick a random URL and open it
-        function pickRandomVideo() {
-            if (urls.length > 0) {
-                const randomIndex = Math.floor(Math.random() * urls.length);
-                window.location.href = urls[randomIndex];
-            } else {
-                alert("No URLs available.");
-            }
-        }
-    </script>
+    function pickRandomVideo() {
+      if (urls.length > 0) {
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        window.location.href = urls[randomIndex];
+      } else {
+        alert("No URLs available.");
+      }
+    }
+  </script>
 </body>
 </html>
